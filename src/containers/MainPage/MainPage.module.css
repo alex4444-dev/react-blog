@@ -1,0 +1,33 @@
+.slide {
+    float: left;
+    display: flex;
+    padding-right: 5px;
+    width: 880px;
+    height: 300px;
+   
+}
+
+.logo{
+    width: 128;
+    height: 128;
+    box-align: middle;
+}
+
+.about {
+    float: right;
+    
+}
+
+.entryTitle {
+    display: center;
+    margin-top: 150px;
+    font-weight: bolder;
+    font-size: 25pt;
+}
+
+.ava {
+    float: right;
+    width: 224px;
+    height: 300px;
+    border: 1px solid hsla(21, 37%, 15%, 0.5);
+}
