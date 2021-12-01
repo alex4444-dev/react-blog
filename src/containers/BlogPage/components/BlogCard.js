@@ -10,7 +10,8 @@ export const BlogCard = ({
   likePost,
   deletePost,
   handleEditFormShow,
-  handleSelectPost
+  handleSelectPost,
+  isAdmin,
 }) => {
 
   const showEditForm = () => {
@@ -27,18 +28,20 @@ export const BlogCard = ({
         <p>{description}</p>
         <div>
           <button onClick={likePost}>
-            <FavoriteIcon style={{fill: heartFill}} />
+            <FavoriteIcon style={{ fill: heartFill }} />
           </button>
         </div>
       </div>
-      <div className="postControl">
-        <button className="editBtn" onClick={showEditForm}>
-          <EditIcon />
-        </button>
-        <button className="deleteBtn" onClick={deletePost}>
-          <DeleteForeverIcon />
-        </button>
-      </div>
+      {isAdmin && (
+        <div className="postControl">
+          <button className="editBtn" onClick={showEditForm}>
+            <EditIcon />
+          </button>
+          <button className="deleteBtn" onClick={deletePost}>
+            <DeleteForeverIcon />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

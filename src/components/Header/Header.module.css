@@ -7,15 +7,18 @@
 
 .mainHeader nav {
     display: flex;
-    align-items: right;
-    justify-content: right;
+    align-items: center;
+    justify-content: right;     
 }
 
-.mainHeader {
+.navbar {
     display: flex;
-    align-items: right;
-    justify-content: right;
+    position: absolute;
+    align-items: center;
+    justify-content: left;   
 }
+
+
 
 
   
@@ -40,7 +43,7 @@
     background-color: crimson;
 }
 
-.active {
+.activeLink {
     color: crimson;
     font-weight: 600;
 }
