@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -7,14 +7,15 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import MainPage from './containers/MainPage/MainPage';
-import BlogPage from './containers/BlogPage/BlogPage';
+import { BlogPage } from './containers/BlogPage/BlogPage';
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { NoMatch } from "./containers/NoMatch/NoMatch";
 import LoginPage from './containers/LoginPage/LoginPage';
-
+import { BlogCardPage } from "./containers/BlogPage/components/BlogCardPage";
+import ContactsPage from './containers/ContactsPage/ContactsPage';
 
 
 export default function App() {
@@ -56,15 +57,23 @@ export default function App() {
               />
             </PublicRoute>
 
+            <PrivateRoute isLoggedIn={isLoggedIn} path="/blog/:postId" exact>
+              <BlogCardPage isAdmin={isAdmin} />
+            </PrivateRoute>
+
             <PrivateRoute isLoggedIn={isLoggedIn} path='/blog'>
               <BlogPage isAdmin={isAdmin} />
             </PrivateRoute>
+
 
             <Route path='/main'
               render={() => <MainPage />} />
 
             <Route path='/blog'
               render={() => <BlogPage />} />
+
+            <Route path='/contacts'
+              render={() => <ContactsPage />} />
 
             <Route path='*'>
               <NoMatch />

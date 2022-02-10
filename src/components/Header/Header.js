@@ -11,17 +11,13 @@ export const Header = ({ isLoggedIn, setIsLoggedIn, userName, setIsAdmin }) => {
     setIsAdmin(false);
   }
 
-  /* const handleLogIn = () => {
-    console.log("passed");
-  } */
-
-
 
   return (
     <header className={styles.mainHeader}>
       <div className={styles.navbar}>
         <NavLink to="/main" activeClassName={styles.activeLink}>Главная</NavLink>
         <NavLink to="/blog" activeClassName={styles.activeLink}>Блог</NavLink>
+        <NavLink to="/contacts" activeClassName={styles.activeLink}>Контакты</NavLink>
       </div>
 
       {
@@ -39,15 +35,7 @@ export const Header = ({ isLoggedIn, setIsLoggedIn, userName, setIsAdmin }) => {
           </nav>
           :
           <nav>
-            &nbsp;<strong>{userName}</strong>
-            <NavLink
-              onClick={handleLogOut}
-              exact
-              to="/main"
-            >
-              <MeetingRoomIcon />
-              Вход
-            </NavLink>
+            Добро пожаловать!
           </nav>
       }
 
