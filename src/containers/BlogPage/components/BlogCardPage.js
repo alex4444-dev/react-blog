@@ -93,7 +93,7 @@ export const BlogCardPage = ({ isAdmin }) => {
                         editBlogPost={editBlogPost}
                     />
                 )}
-                <div className='postControl'>
+                <div className='postContent'>
                     <div>
                         <h2>{post.title}</h2>
                         <p>{post.description}</p>
@@ -104,7 +104,7 @@ export const BlogCardPage = ({ isAdmin }) => {
                         </div>
                     </div>
                     {isAdmin && (
-                        <div>
+                        <div className='postControl'>
                             <button
                                 className='editBtn'
                                 onClick={() => handleEditFormShow(post)}

@@ -4,8 +4,8 @@
 
 .blogPage .preloader {
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 10px;
+    top: 30px;
 }
 
 .addNewPost {
@@ -16,20 +16,16 @@
     width: 750px;
     margin: 0 auto;
 }
- 
-.editBtn {
+.postControl {
+    display: flex;
+    align-self: flex-end;
     position: relative;
-    bottom: 10px;
-    left: -60%;
-    margin-top: 450px;
+    height: 100%;
+    bottom: 5px;
 }
 
-.deleteBtn {
-    position: relative;
-    bottom: 10px;
-    left: -60%;
-    margin-top: 450px;
-}
+
+
 
  
 
