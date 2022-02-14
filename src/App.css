@@ -5,6 +5,8 @@
 }
 
 body {
+  background: rgb(240, 236, 236) url(/src/images/background.png);
+  background-repeat: no-repeat;
   margin: 0;
   font-family: 'Nunito', sans-serif;
 }

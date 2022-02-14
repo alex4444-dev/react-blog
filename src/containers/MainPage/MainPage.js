@@ -38,7 +38,7 @@ const MainPage = createClass({
                         <div id="content" className="site-content" role="main">
                             <article id="post-7" className="post-7 page type-page status-publish hentry">
                                 <header className="entry-header">
-                                    <h1 className={s.entryTitle}>Биография Ефима Борисовича Заславского</h1>	</header>{/* .entry-header */}
+                                    <h1 className={s.entryTitle}>Биография Ефима Борисовича Заславского</h1>	</header>
                                 <div className={s.entryContent}>
                                     <p><img src={ava} title="Ефим Борисович Заславский" className={s.ava} /></p>
                                     <p><strong style={{ color: '#235713' }}>Дата рождения: </strong> 1938<br />
@@ -51,20 +51,19 @@ const MainPage = createClass({
                                     <p>1990-2000 г.концертная деятельность удачно совмещается с вокально-педагогической работой в ДМШ №2, где впервые в Крыму по его инициативе открыт класс вокала в 1992 году.</p>
                                     <p>Являясь солистом Крымгосфилармонии создает музыкально-художественый лекторий(1992 г) для учащихся и студентов города, на базе картинной галереи, которым руководит уже более 20 лет.</p>
                                     <p><strong style={{ color: '#235713' }}>Награды: </strong> Заслуженный работник культуры Украины, Заслуженный артист АРК, лауреат премии искусств АРК.</p>
-                                </div>{/* .entry-content */}
-                            </article>{/* #post-## */}
+                                </div>
+                            </article>
                             <div id="comments" className="comments-area">
-                            </div>{/* #comments .comments-area */}
-                        </div>{/* #content .site-content */}
-                    </div>{/* #primary .content-area */}
+                            </div>
+                        </div>
+                    </div>
 
                     <div>
                         <input type="hidden" name="gW4b1vlxspnh" id="gW4b1vlxspnh" />
-                    </div>{/* #main .site-main */}
+                    </div>
 
-                </div > {/* #page .hfeed .site */}
-                {/* ngg_resource_manager_marker */}
-                {/* Lightbox Plus Colorbox v2.7.2/1.5.9 - 2013.01.24 - Message: 0*/}
+                </div >
+
             </div >
         );
     }

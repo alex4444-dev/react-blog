@@ -14,13 +14,14 @@
 
 .posts {
     width: 760px;
-    margin: 0 auto;
+    margin: 5 5 auto; 
+    
 }
 .postsControl {
     display: flex;
     align-self: flex-end;
     position: relative;
-    padding-right: 30px;
+    padding-right: 10px;
     height: 100%;
     bottom: 5px;
 }

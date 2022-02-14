@@ -2,16 +2,11 @@
     float: left;
     display: flex;
     padding-right: 5px;
-    width: 880px;
-    height: 300px;
+    width: 745px;
+    height: 250px;
    
 }
 
-.logo{
-    width: 128;
-    height: 128;
-    box-align: middle;
-}
 
 .about {
     float: right;
