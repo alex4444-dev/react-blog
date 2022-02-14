@@ -33,7 +33,7 @@ export const BlogCard = ({
         </div>
       </div>
       {isAdmin && (
-        <div className="postControl">
+        <div className="postsControl">
           <button className="editBtn" onClick={showEditForm}>
             <EditIcon />
           </button>

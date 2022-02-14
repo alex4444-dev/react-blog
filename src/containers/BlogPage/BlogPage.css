@@ -13,17 +13,21 @@
 }
 
 .posts {
-    width: 750px;
+    width: 760px;
     margin: 0 auto;
 }
-.postControl {
+.postsControl {
     display: flex;
     align-self: flex-end;
     position: relative;
+    padding-right: 30px;
     height: 100%;
     bottom: 5px;
 }
 
+.postsControl button {
+    padding: 0;
+}
 
 
 
