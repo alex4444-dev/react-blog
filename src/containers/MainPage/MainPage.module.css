@@ -1,23 +1,37 @@
+.pageWrapper {
+    display: block;
+    max-width: 720px;
+    margin: auto;
+}
+
 .slide {
     float: left;
-    display: flex;
+    display: block;
     padding-right: 5px;
-    width: 745px;
-    height: 250px;
-   
+    margin-bottom: 15px;
+    width: 720px;
+    height: 230px; 
 }
 
 
 .about {
-    float: right;
-    
+    display: block;
+    float: right;  
 }
 
 .entryTitle {
-    display: center;
-    margin-top: 150px;
+    display: block;
+    margin-top: 155px;
+    margin-left: 5px;
+    margin-right: 5px;  
     font-weight: bolder;
     font-size: 25pt;
+}
+
+.entryContent {
+    display: block;
+    margin-left: 5px;
+    margin-right: 5px;  
 }
 
 .ava {

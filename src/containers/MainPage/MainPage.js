@@ -2,22 +2,20 @@ import * as React from 'react';
 import createClass from 'create-react-class';
 import ava from '../../images/ava.jpg';
 import slide from '../../images/slide.jpg';
-import background from '../../images/background.png';
 import s from './MainPage.module.css';
 
 const MainPage = createClass({
     render: function () {
         return (
-            <div>
+            <div className={s.pageWrapper}>
                 <title><h1>Блог Ефима Заславского | Дирижер-хормейстер, певец-солист Крымгосфилармонии, вокальный педагог</h1></title>
 
-                <div id="page" className="hfeed site">
-                    <header id="masthead" className="site-header" role="banner">
-                        <div className="site-branding">
-                            <h1 className="site-title"><a title="Блог Ефима Заславского" rel="home">Блог Ефима Заславского</a></h1>
-                            <h2 className="site-description">Дирижер-хормейстер, певец-солист Крымгосфилармонии, вокальный педагог</h2>
+                <div>
+                    <header>
+                        <div>
+                            <h1><a>Блог Ефима Заславского</a></h1>
+                            <h2>Дирижер-хормейстер, певец-солист Крымгосфилармонии, вокальный педагог</h2>
                         </div>
-                        <div img src={background} className={s.logo} alt=''></div>
 
                         <div className={s.about}>
                             <em><span style={{ color: '#993300' }}><strong>Ефим Борисович Заславский</strong></span></em><br />
@@ -28,17 +26,17 @@ const MainPage = createClass({
                     </header>
                 </div>
 
-                <div id="main" className="site-branding">
-                    <div className="header-image">
-                        <a href="http://efimzaslavskiy.ru/" title="Блог Ефима Заславского" rel="home">
+                <div>
+                    <div>
+                        <a title="Блог Ефима Заславского">
                             <img src={slide} alt="" className={s.slide} />
                         </a>
                     </div>
-                    <div id="primary" className="content-area">
-                        <div id="content" className="site-content" role="main">
-                            <article id="post-7" className="post-7 page type-page status-publish hentry">
-                                <header className="entry-header">
-                                    <h1 className={s.entryTitle}>Биография Ефима Борисовича Заславского</h1>	</header>
+                    <div className={s.contentArea}>
+                        <div>
+                            <article>
+                                <header>
+                                    <h1 className={s.entryTitle}>Биография Ефима Борисовича Заславского</h1></header>
                                 <div className={s.entryContent}>
                                     <p><img src={ava} title="Ефим Борисович Заславский" className={s.ava} /></p>
                                     <p><strong style={{ color: '#235713' }}>Дата рождения: </strong> 1938<br />
@@ -53,18 +51,11 @@ const MainPage = createClass({
                                     <p><strong style={{ color: '#235713' }}>Награды: </strong> Заслуженный работник культуры Украины, Заслуженный артист АРК, лауреат премии искусств АРК.</p>
                                 </div>
                             </article>
-                            <div id="comments" className="comments-area">
-                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div>
-                        <input type="hidden" name="gW4b1vlxspnh" id="gW4b1vlxspnh" />
-                    </div>
-
-                </div >
-
-            </div >
+            </div>
         );
     }
 });
