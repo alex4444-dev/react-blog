@@ -4,13 +4,13 @@
     margin: auto;
 }
 
-.slide {
+.banner {
     float: left;
     display: block;
     padding-right: 5px;
     margin-bottom: 15px;
     width: 720px;
-    height: 230px; 
+    height: 210px; 
 }
 
 
@@ -21,7 +21,8 @@
 
 .entryTitle {
     display: block;
-    margin-top: 155px;
+    margin-top: 70px;
+    margin-bottom: 60px;
     margin-left: 5px;
     margin-right: 5px;  
     font-weight: bolder;
@@ -34,9 +35,16 @@
     margin-right: 5px;  
 }
 
+.title {
+    text-align: center;
+    display: block;
+    font-weight: bolder;
+    font-size: 20pt;
+}
+
 .ava {
     float: right;
     width: 224px;
-    height: 300px;
+    height: 260px;
     border: 1px solid hsla(21, 37%, 15%, 0.5);
 }

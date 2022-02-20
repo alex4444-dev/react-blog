@@ -25,3 +25,8 @@
 .loginForm button {
     width: 100%;
 }
+
+.anotation {
+    font-size: 12px;
+    font-weight: normal;
+}

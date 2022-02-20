@@ -1,38 +1,5 @@
-.mainContacts {
+.contacts {
     font-size: 14px;
     text-align: left;
+    margin: auto;
 }
-
-.contactsForm {
-    width: max-content;
-    padding: 20px;
-    margin: 0 auto;
-
-    text-align: center;
-}
-
-.contactsForm h2 {
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-.contactsFormInput {
-    width: 50%;
-    padding: 4px 5px;
-    border-radius: 8px;
-    border: 1px solid rgb(73, 73, 73)
-}
-
-.contactsFormInput:focus::placeholder {
-    color: transparent;
-}
-
-.contactsFormInput button {
-    width: 30%;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-
-

@@ -1,27 +1,20 @@
-import './ContactsPage.css'
+import "./ContactsPage.css"
 
 const ContactsPage = () => {
 
     return (
         <h1>
-            <div className='mainContacts'>
+            <div className="contacts">
                 <h2>Контакты</h2>
+                <ul>
+                    <p><a href="https://vk.com/id50961109">Моя страница вк</a></p>
+                    <p><a href="https://vk.com/club21293398">Моя группа вк</a></p>
+                    <p><a href="http://www.proza.ru/avtor/grigorieval4444">Проза.ру</a></p>
+                </ul>
 
-                <p>Адрес: " 98105, Феодосия. "</p>
-
-                <p>Служебный тел.: " (06562) 3-00-32, 2-21-21 "</p>
-
-                <p>Мобильный тел.: " 066-958-70-48 "</p>
-
-                <p>E-mail: " efimzaslavskiy38@mail.ru, akademfest@yandex.ru "</p>
             </div>
         </h1>
     )
 }
-
-
-
-
-
 
 export default ContactsPage;

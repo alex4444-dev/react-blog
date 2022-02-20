@@ -46,6 +46,9 @@ const LoginPage = ({
     <h1>
       <form className="loginForm" onSubmit={handleLogIn}>
         <h2>Авторизация</h2>
+        <div className="anotation">
+          <p>Чтобы прочитать блог, придумайте логин и пароль</p>
+        </div>
         <div>
           <input
             className="loginFormInput"

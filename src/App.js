@@ -75,6 +75,7 @@ export default function App() {
             <Route path='/contacts'
               render={() => <ContactsPage />} />
 
+
             <Route path='*'>
               <NoMatch />
             </Route>
