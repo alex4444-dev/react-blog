@@ -34,9 +34,9 @@
     display: flex;
     align-self: flex-end;
     position: relative;
-    padding-right: 10px;
+    margin-bottom: 10px;
     height: 100%;
-    bottom: 48px;
+    bottom: 55px;
 }
 
 

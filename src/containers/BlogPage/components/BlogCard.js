@@ -2,7 +2,7 @@ import './BlogCard.css';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
-import { NavLink } from 'react-router-dom';
+
 
 export const BlogCard = ({
   title,
@@ -35,7 +35,7 @@ export const BlogCard = ({
       <div className="postContent">
         <h2>{title}</h2>
         <p>{shortDescription}</p>
-        <div>
+        <div className="likeButton">
           <button onClick={likePost}>
             <FavoriteIcon style={{ fill: heartFill }} />
           </button>
