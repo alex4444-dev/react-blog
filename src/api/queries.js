@@ -11,11 +11,20 @@ export const useGetPosts = () => {
             .catch(err => {
                 throw new Error(err)
             })
-    }, {
-        refetchOnWindowFocus: false,
     })
 
 }
+
+export const useGetSinglePost = (postId) => {
+    return useQuery(['post', postId], () => {
+        return axios.get(postsUrl + postId)
+            .then(res => res.data)
+            .catch(err => {
+                throw new Error(err)
+            })
+    })
+}
+
 
 export const useLikePost = () => {
     const queryClient = useQueryClient();
@@ -28,9 +37,9 @@ export const useLikePost = () => {
                     throw new Error(err)
                 })
         }, {
-        onSuccess: (data) => {
-            console.log('success', data);
+        onSuccess: (updatedPost) => {
             queryClient.invalidateQueries('posts');
+            queryClient.setQueryData(['post', updatedPost.id], updatedPost)
         },
         onError: (error) => {
             console.log(error)
@@ -76,9 +85,9 @@ export const useEditPost = () => {
                     throw new Error(err)
                 })
         }, {
-        onSuccess: (data) => {
-            console.log('success', data);
+        onSuccess: (updatedPost) => {
             queryClient.invalidateQueries('posts');
+            queryClient.setQueryData(['post', updatedPost.id], updatedPost)
         },
         onError: (error) => {
             console.log(error)
@@ -108,14 +117,3 @@ export const useAddPost = () => {
     )
 }
 
-export const useGetSinglePost = (postId) => {
-    return useQuery(['posts', postId], () => {
-        return axios.get(postsUrl + postId)
-            .then(res => res.data)
-            .catch(err => {
-                throw new Error(err)
-            })
-    }, {
-        refetchOnWindowFocus: false,
-    })
-} 

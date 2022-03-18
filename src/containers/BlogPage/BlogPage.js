@@ -23,11 +23,10 @@ export const BlogPage = ({ isAdmin }) => {
   const addMutation = useAddPost();
 
 
-
-
   if (isLoading) return <h1>Загружаю данные...</h1>;
 
   if (isError) return <h1>{error.message}</h1>;
+
 
   const likePost = (blogPost) => {
     const updatedPost = { ...blogPost };
