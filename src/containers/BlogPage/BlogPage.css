@@ -30,6 +30,15 @@
     padding: 0;
 }
 
+.readMoreLink {
+    display: flex;
+    align-self: flex-end;
+    position: relative;
+    padding-right: 10px;
+    height: 100%;
+    bottom: 48px;
+}
+
 
 
  

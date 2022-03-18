@@ -84,7 +84,7 @@ export const BlogPage = ({ isAdmin }) => {
           handleSelectPost={() => handleSelectPost(item)}
           isAdmin={isAdmin}
         />
-        <Link to={`/blog/${item.id}`}>Подробнее</Link>
+        <div className="readMoreLink"><Link to={`/blog/${item.id}`}>Подробнее</Link></div>
       </React.Fragment>
     );
   });
