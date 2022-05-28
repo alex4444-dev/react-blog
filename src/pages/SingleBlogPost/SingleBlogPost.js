@@ -1,19 +1,19 @@
-import './BlogCard.css';
+import './SingleBlogPost.css';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react'
-import { EditPostForm } from './EditPostForm';
+import { EditPostForm } from '../../components/EditPostForm/EditPostForm';
 import {
     useDeletePost,
     useEditPost,
     useGetSinglePost,
     useLikePost,
-} from '../../../api/queries';
+} from '../../api/queries';
 
-export const BlogCardPage = ({ isAdmin }) => {
+export const SingleBlogPost = ({ isAdmin }) => {
     const { postId } = useParams();
 
     const [selectedPost, setSelectedPost] = useState({});

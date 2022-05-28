@@ -12,11 +12,11 @@
     text-align: center;
 }
 
-.posts {
-    width: 760px;
-    margin: auto; 
-    
+.post {
+    width: 100%;
+    padding: 0 auto;
 }
+
 .postsControl {
     display: flex;
     align-self: flex-end;
@@ -29,17 +29,3 @@
 .postsControl button {
     padding: 0;
 }
-
-.readMoreLink {
-    display: flex;
-    align-self: flex-end;
-    position: relative;
-    margin-bottom: 10px;
-    height: 100%;
-    bottom: 55px;
-}
-
-
-
- 
-

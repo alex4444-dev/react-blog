@@ -17,7 +17,6 @@ export const Header = ({ isLoggedIn, setIsLoggedIn, userName, setIsAdmin }) => {
       <div className={styles.navbar}>
         <NavLink to="/main" activeClassName={styles.activeLink}>Главная</NavLink>
         <NavLink to="/blog" activeClassName={styles.activeLink}>Блог</NavLink>
-        <NavLink to="/contacts" activeClassName={styles.activeLink}>Контакты</NavLink>
       </div>
 
       {

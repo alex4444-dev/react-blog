@@ -5,7 +5,7 @@ import ava from '../../images/ava.jpg';
 import banner from '../../images/banner.jpg';
 
 
-const MainPage = createClass({
+export const Main = createClass({
     render: function () {
         return (
             <div className={s.pageWrapper}>
@@ -48,5 +48,5 @@ const MainPage = createClass({
     }
 });
 
-export default MainPage;
+
 

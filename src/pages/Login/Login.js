@@ -1,9 +1,9 @@
 import { SettingsSystemDaydreamOutlined } from "@material-ui/icons";
 import { useState } from "react";
 import { useHistory } from "react-router";
-import "./LoginPage.css";
+import "./Login.css";
 
-const LoginPage = ({
+export const Login = ({
   setIsLoggedIn,
   setUserName,
   setIsAdmin
@@ -80,4 +80,4 @@ const LoginPage = ({
 };
 
 
-export default LoginPage;
+
