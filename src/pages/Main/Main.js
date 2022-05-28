@@ -1,6 +1,6 @@
 import * as React from 'react';
 import createClass from 'create-react-class';
-import s from './MainPage.module.css';
+import s from './Main.module.css';
 import ava from '../../images/ava.jpg';
 import banner from '../../images/banner.jpg';
 
