@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NavLink } from "react-router-dom";
 import createClass from 'create-react-class';
 import s from './Main.module.css';
 import ava from '../../images/ava.jpg';
@@ -27,7 +28,7 @@ export const Main = createClass({
 
                                     <p>Доброго времени суток, уважаемые посетители.</p>
                                     <p>На этом сайте вы найдете увлекательные истории и новеллы</p>
-                                    <p>Они находятся в разделе <strong style={{ color: '#235713' }}>"Блог"</strong> </p>
+                                    <p>Они находятся в разделе <NavLink to="/blog">БЛОГ</NavLink> </p>
                                     <p><strong style={{ font: 'bold' }}>Примечание:</strong> Для того чтобы получить доступ </p>
                                     <p>к данному разделу вам необходимо авторизоваться на сайте под любым именем и паролем.</p>
                                     <p></p>
