@@ -1,0 +1,50 @@
+.blogPage {
+    align-content: center;
+    align-items: center;
+    display: block;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 100vw;
+}
+
+.blogPage .preloader {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+}
+
+.addNewPost {
+    text-align: center;
+    margin: 30px;
+}
+
+.posts {
+    display: block;
+    margin-left: 5px;
+    margin-right: 5px; 
+    font-size: 15px;   
+}
+
+.postsControl {
+    display: flex;
+    position: relative;
+    padding-right: 15px;
+    bottom: 5px;
+}
+
+.postsControl button {
+    padding: 0;
+}
+
+.readMoreLink {
+    display: block;
+    position: relative;
+    margin: auto;
+    bottom: 40px;
+    margin-left: 15vw;
+}
+
+
+
+ 
+

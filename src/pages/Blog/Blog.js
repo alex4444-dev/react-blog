@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Blog.css';
+import s from './Blog.module.css';
 import { AddPostForm } from './AddPostForm/AddPostForm';
 import { PostCard } from './PostCard/PostCard';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -84,7 +84,7 @@ export const Blog = ({ isAdmin }) => {
           handleSelectPost={() => handleSelectPost(item)}
           isAdmin={isAdmin}
         />
-        <div className="readMoreLink"><Link to={`/blog/${item.id}`}>Подробнее</Link></div>
+        <div className={s.readMoreLink}><Link to={`/blog/${item.id}`}>Подробнее</Link></div>
       </React.Fragment>
     );
   });
@@ -93,7 +93,9 @@ export const Blog = ({ isAdmin }) => {
   const postsOpactiy = isFetching ? 0.5 : 1;
 
   return (
-    <div className='blogPage'>
+
+
+    <div className={s.blogPage}>
       {showAddForm && (
         <AddPostForm
           addNewBlogPost={addNewBlogPost}
@@ -113,17 +115,17 @@ export const Blog = ({ isAdmin }) => {
         <h1>Блог</h1>
 
         {isAdmin && (
-          <div className='addNewPost'>
+          <div className={s.addNewPost}>
             <button className='blackBtn' onClick={handleAddFormShow}>
               Создать новый пост
             </button>
           </div>
         )}
 
-        <div className='posts' style={{ opacity: postsOpactiy }}>
+        <div className={s.posts} style={{ opacity: postsOpactiy }}>
           {blogPosts}
         </div>
-        {isFetching && <CircularProgress className='preloader' />}
+        {isFetching && <CircularProgress className={s.preloader} />}
       </>
     </div>
   );
