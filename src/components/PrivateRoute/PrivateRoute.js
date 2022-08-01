@@ -6,10 +6,8 @@ export const PrivateRoute = ({ isLoggedIn, children, path }) => {
     <Route
       path={path}
       render={() => {
-        if (isLoggedIn) return children
-        return <Redirect to="/login" />
+        if (!isLoggedIn) return children
       }}
     />
-
   )
 }

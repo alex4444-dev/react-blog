@@ -7,8 +7,9 @@ export const PublicRoute = ({ isLoggedIn, children, path }) => {
       path={path}
       render={() => {
         if (!isLoggedIn) return children
-        return <Redirect to="/login" />
+        
       }}
     />
   )
 }
+

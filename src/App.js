@@ -1,43 +1,37 @@
-import { useState } from "react";
-import { BrowserRouter as Router } from 'react-router-dom';
-import { AppRoutes } from './AppRoutes';
-import { Footer } from "./components/Footer/Footer";
-import { Header } from "./components/Header/Header";
+
+import { Switch } from "react-router-dom";
+
+import './App.css';
+import { MainBlock } from './components/MainBlock/MainBlock';
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
+import { PublicRoute } from './components/PublicRoute/PublicRoute';
+import { POSTS_URL } from './utils/constants';
+import { useFetchPosts } from './utils/hooks';
+import { LoginPage } from './pages/LoginPage/LoginPage';
 
 
+function App() {
+  
+  
+  const postsData = useFetchPosts(POSTS_URL);
 
-
-export default function App() {
-
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    localStorage.getItem("isLoggedIn") === "true"
-  );
-
-  const [userName, setUserName] = useState(localStorage.getItem("userName"));
-  const [isAdmin, setIsAdmin] = useState(localStorage.getItem("userName") === "admin");
+  const blogPostRoutes = postsData.blogPosts.map((post) => {
+    return `/blog/${post.id}`;
+  });
 
   return (
-    <Router>
-      <div className="App">
-        <Header
-          userName={userName}
-          isLoggedIn={isLoggedIn}
-          setIsLoggedIn={setIsLoggedIn}
-          setIsAdmin={setIsAdmin}
-        />
+    <div className='App'>
+      <Switch>
+        <PublicRoute path='/login' blogPostRoutes={blogPostRoutes}>
+          <LoginPage />
+        </PublicRoute>
 
-        <main>
-          <AppRoutes
-            isLoggedIn={isLoggedIn}
-            setIsLoggedIn={setIsLoggedIn}
-            setUserName={setUserName}
-            setIsAdmin={setIsAdmin}
-            isAdmin={isAdmin}
-          />
-        </main>
-        <Footer year={new Date().getFullYear()} />
-      </div>
-    </Router>
+        <PrivateRoute path='/' blogPostRoutes={blogPostRoutes}>
+          <MainBlock postsData={postsData} />
+        </PrivateRoute>
+      </Switch>
+    </div>
   );
 }
 
+export default App;

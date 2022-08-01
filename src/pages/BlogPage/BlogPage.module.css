@@ -1,0 +1,53 @@
+h2 {
+  align-items: center;
+}
+
+.blogPage {
+  align-content: left;
+  align-items: left;
+  display: block;
+  justify-content: flex-start;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.blogPage .preloader {
+  position: absolute;
+  left: 10px;
+  top: 30px;
+}
+
+.postsWrapper {
+  width: 100%;
+  margin-top: 50px;
+  text-align: left;
+  margin: 30px;
+}
+
+.posts {
+  display: block;
+  margin-left: 5px;
+  margin-right: 5px; 
+  top: 50px;
+  font-size: 15px;   
+}
+
+.postsControl {
+  display: flex;
+  position: relative;
+  padding-right: 15px;
+  bottom: 5px;
+}
+
+.postsControl button {
+  padding: 0;
+}
+
+.readMoreLink {
+  display: block;
+  position: relative;
+  font-size: 20px;
+  margin: auto;
+  bottom: 45px;
+  margin-left: 55px;
+}
