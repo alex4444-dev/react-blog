@@ -39,19 +39,24 @@ export const MainBlock = ({ postsData }) => {
                     return <Redirect to='/home' />;      
                 }}/>
           <Route exact path='/login'>
-            <LoginPage />
+            <LoginPage 
+              setIsLoggedIn={setIsLoggedIn}
+              setUserName={setUserName}
+              setIsAdmin={setIsAdmin}
+              isAdmin={isAdmin}
+            />
           </Route>
           <Route exact path='/home'>
             <HomePage />
           </Route>
           <Route exact path='/blog'>
-            <BlogPage title="Posts" {...postsData} />
+            <BlogPage title="Posts" {...postsData} isAdmin />
           </Route>
           <Route exact path='/favourite'>
-            <BlogPage title="Favourite posts" {...postsData} isLikedPosts />
+            <BlogPage title="Favourite posts" {...postsData} isLikedPosts isAdmin />
           </Route> 
           <Route path="/blog/:postId">
-            <BlogPostPage setBlogPosts={postsData.setBlogPosts} />
+            <BlogPostPage setBlogPosts={postsData.setBlogPosts} isAdmin/>
           </Route>
           <Route path='*'>
             <NoMatch />

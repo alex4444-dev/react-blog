@@ -58,8 +58,8 @@ export const BlogPostPage = ({ isAdmin }) => {
         <button onClick={handleLikePost} className='likeBtn'>
           <HeartIcon fill={customFilling} />
         </button>
-     {isAdmin && (
-        <div className='actions'>
+     {/* {isAdmin && (
+      <div className='actions'>
         <button onClick={handleDeletePost} className='deleteBtn'>
           <DeleteForeverIcon />
         </button>
@@ -67,7 +67,7 @@ export const BlogPostPage = ({ isAdmin }) => {
           <EditIcon />
         </button>
       </div>
-        )}
+        )} */}
       {showEditForm && (
         <EditForm setShowEditForm={setShowEditForm} selectedPost={blogPost} />
       )}

@@ -15,7 +15,11 @@ export const BlogPage = ({
   isLoading,
   setBlogPosts,
   error,
+  isLoggedIn,
+  setUserName,
+  setIsLoggedIn,
   isAdmin,
+  setIsAdmin,
   isLikedPosts = false,
 }) => {
   const likedPosts = blogPosts.filter((post) => post.liked);
@@ -92,7 +96,6 @@ export const BlogPage = ({
               likePost={() => likePost(pos)}
               deletePost={() => deletePost(post.id)}
               selectPost={() => selectPost(post)}
-              isAdmin={isAdmin}
               key={post.id}
             />
             <div className={s.readMoreLink}><Link to={`/blog/${post.id}`}>Подробнее</Link></div>

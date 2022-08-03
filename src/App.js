@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { Switch } from "react-router-dom";
 
 import './App.css';
@@ -10,9 +11,14 @@ import { useFetchPosts } from './utils/hooks';
 import { LoginPage } from './pages/LoginPage/LoginPage';
 
 
-function App() {
-  
-  
+function App() { 
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("isLoggedIn") === "true"
+  );
+
+  const [userName, setUserName] = useState(localStorage.getItem("userName"));
+  const [isAdmin, setIsAdmin] = useState(localStorage.getItem("userName") === "admin");
+
   const postsData = useFetchPosts(POSTS_URL);
 
   const blogPostRoutes = postsData.blogPosts.map((post) => {
@@ -22,13 +28,25 @@ function App() {
   return (
     <div className='App'>
       <Switch>
-        <PublicRoute path='/login' blogPostRoutes={blogPostRoutes}>
-          <LoginPage />
-        </PublicRoute>
-
-        <PrivateRoute path='/' blogPostRoutes={blogPostRoutes}>
-          <MainBlock postsData={postsData} />
+        <PrivateRoute path='/login'>
+          <LoginPage 
+            setIsLoggedIn={setIsLoggedIn}
+            setUserName={setUserName}
+            setIsAdmin={setIsAdmin}
+            isAdmin={isAdmin}
+            userName={userName}
+          />
         </PrivateRoute>
+
+        <PublicRoute path='/' blogPostRoutes={blogPostRoutes}>
+          <MainBlock 
+            postsData={postsData} 
+            isAdmin={isAdmin} 
+            setIsAdmin={setIsAdmin}
+            setIsLoggedIn={setIsLoggedIn}
+            setUserName={setUserName}
+            />
+        </PublicRoute>
       </Switch>
     </div>
   );

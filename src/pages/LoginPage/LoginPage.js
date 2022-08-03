@@ -27,10 +27,10 @@ export const LoginPage = ({ setIsLoggedIn, setUserName, setIsAdmin }) => {
         return false
       }
     }
-
+    
     setUserName(login);
     setIsLoggedIn(true);
-    history.push('/home');
+    history.push('/');
 
     localStorage.setItem('isLoggedIn', true);
     localStorage.setItem('userName', login);

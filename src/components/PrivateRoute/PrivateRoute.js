@@ -6,7 +6,8 @@ export const PrivateRoute = ({ isLoggedIn, children, path }) => {
     <Route
       path={path}
       render={() => {
-        if (!isLoggedIn) return children
+        if (!isLoggedIn) 
+        return children
       }}
     />
   )
