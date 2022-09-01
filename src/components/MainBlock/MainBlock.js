@@ -22,7 +22,7 @@ export const MainBlock = ({ postsData }) => {
 
   return (
     <>
-      <Header 
+      <Header
         userName={userName}
         isLoggedIn={isLoggedIn}
         setUserName={setUserName}
@@ -32,14 +32,14 @@ export const MainBlock = ({ postsData }) => {
       />
       <main className='mainBlock'>
         <Switch>
-        <Route exact
-                path='/'
-                render={() => {
-                    if (isLoggedIn) 
-                    return <Redirect to='/home' />;      
-                }}/>
+          <Route exact
+            path='/'
+            render={() => {
+              if (isLoggedIn)
+                return <Redirect to='/home' />;
+            }} />
           <Route exact path='/login'>
-            <LoginPage 
+            <LoginPage
               setIsLoggedIn={setIsLoggedIn}
               setUserName={setUserName}
               setIsAdmin={setIsAdmin}
@@ -50,19 +50,19 @@ export const MainBlock = ({ postsData }) => {
             <HomePage />
           </Route>
           <Route exact path='/blog'>
-            <BlogPage title="Posts" {...postsData} isAdmin />
+            <BlogPage title="Posts" {...postsData} isAdmin={isAdmin} />
           </Route>
           <Route exact path='/favourite'>
-            <BlogPage title="Favourite posts" {...postsData} isLikedPosts isAdmin />
-          </Route> 
+            <BlogPage title="Favourite posts" {...postsData} isLikedPosts />
+          </Route>
           <Route path="/blog/:postId">
-            <BlogPostPage setBlogPosts={postsData.setBlogPosts} isAdmin/>
+            <BlogPostPage setBlogPosts={postsData.setBlogPosts} isAdmin />
           </Route>
           <Route path='*'>
             <NoMatch />
-        </Route>
+          </Route>
         </Switch>
-        
+
       </main>
     </>
   );

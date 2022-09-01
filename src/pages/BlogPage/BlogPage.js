@@ -15,16 +15,10 @@ export const BlogPage = ({
   isLoading,
   setBlogPosts,
   error,
-  isLoggedIn,
-  setUserName,
-  setIsLoggedIn,
-  isAdmin,
-  setIsAdmin,
   isLikedPosts = false,
+  isAdmin
 }) => {
   const likedPosts = blogPosts.filter((post) => post.liked);
-
-
 
   const likePost = (pos) => {
     const updatedPosts = [...blogPosts];
@@ -44,7 +38,7 @@ export const BlogPage = ({
       .catch((error) => console.log(error));
   };
 
-  
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -83,25 +77,26 @@ export const BlogPage = ({
         isLikedPosts={isLikedPosts}
         setBlogPosts={setBlogPosts}
         blogPosts={blogPosts}
+        isAdmin={isAdmin}
       />
 
       <section className={s.posts}>
         {(isLikedPosts ? likedPosts : blogPosts).map((post, pos) => {
           return (
             <React.Fragment key={post.id}>
-            <Post
-              title={post.title}
-              description={post.description}
-              liked={post.liked}
-              likePost={() => likePost(pos)}
-              deletePost={() => deletePost(post.id)}
-              selectPost={() => selectPost(post)}
-              key={post.id}
-            />
-            <div className={s.readMoreLink}><Link to={`/blog/${post.id}`}>Подробнее</Link></div>
+              <Post
+                title={post.title}
+                description={post.description}
+                liked={post.liked}
+                likePost={() => likePost(pos)}
+                deletePost={() => deletePost(post.id)}
+                selectPost={() => selectPost(post)}
+                isAdmin={isAdmin}
+              />
+              <div className={s.readMoreLink}><Link to={`/blog/${post.id}`}>Подробнее</Link></div>
             </React.Fragment>
           );
-          
+
         })}
       </section>
 

@@ -4,7 +4,7 @@ import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 
 export const Header = ({ isLoggedIn, setIsLoggedIn, userName, setIsAdmin }) => {
 
-const handleLogOut = () => {
+  const handleLogOut = () => {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('userName');
     setIsLoggedIn(false);
@@ -24,16 +24,17 @@ const handleLogOut = () => {
         isLoggedIn ?
           <nav>
             &nbsp;<strong>{userName}</strong>
+            <MeetingRoomIcon />
             <button onClick={handleLogOut}>Выход</button>
           </nav>
           :
           <nav>
-            <NavLink 
-               to='/login'
-              >
-               <MeetingRoomIcon />
-               Админка 
-              </NavLink>
+            <NavLink
+              to='/login'
+            >
+              <MeetingRoomIcon />
+              Админка
+            </NavLink>
           </nav>
       }
 

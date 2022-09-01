@@ -11,7 +11,7 @@ import { useFetchPosts } from './utils/hooks';
 import { LoginPage } from './pages/LoginPage/LoginPage';
 
 
-function App() { 
+function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("isLoggedIn") === "true"
   );
@@ -29,8 +29,9 @@ function App() {
     <div className='App'>
       <Switch>
         <PrivateRoute path='/login'>
-          <LoginPage 
+          <LoginPage
             setIsLoggedIn={setIsLoggedIn}
+            isLoggedIn={isLoggedIn}
             setUserName={setUserName}
             setIsAdmin={setIsAdmin}
             isAdmin={isAdmin}
@@ -39,13 +40,13 @@ function App() {
         </PrivateRoute>
 
         <PublicRoute path='/' blogPostRoutes={blogPostRoutes}>
-          <MainBlock 
-            postsData={postsData} 
-            isAdmin={isAdmin} 
+          <MainBlock
+            postsData={postsData}
+            isAdmin={isAdmin}
             setIsAdmin={setIsAdmin}
             setIsLoggedIn={setIsLoggedIn}
             setUserName={setUserName}
-            />
+          />
         </PublicRoute>
       </Switch>
     </div>

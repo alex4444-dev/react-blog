@@ -23,11 +23,11 @@ export const LoginPage = ({ setIsLoggedIn, setUserName, setIsAdmin }) => {
     if (login === 'admin') {
       if (password === '4444') setIsAdmin(true);
       else {
-        alert('Введите правильный логин или пароль!');
+        //(setIsLoggedIn(false)); setIsAdmin(false);
         return false
       }
     }
-    
+
     setUserName(login);
     setIsLoggedIn(true);
     history.push('/');
@@ -38,34 +38,34 @@ export const LoginPage = ({ setIsLoggedIn, setUserName, setIsAdmin }) => {
 
   return (
     <h1>
-    <form className="loginForm">
-      <h2>Авторизация</h2>
-      <div>
-        <input
-          className="loginFormInput"
-          type="text"
-          placeholder="Логин"
-          onChange={handleLoginChange}
-          value={login}
-          required
-        />
-      </div>
-      <div>
-        <input
-          className="loginFormInput"
-          type="password"
-          placeholder="Пароль"
-          onChange={handlePasswordChange}
-          value={password}
-          required
-        />
-      </div>
-      <div>
-        <button className="blackBtn" onClick={handleLogIn}>
-          Войти
-        </button>
-      </div>
-    </form>
-  </h1>
+      <form className="loginForm">
+        <h2>Авторизация</h2>
+        <div>
+          <input
+            className="loginFormInput"
+            type="text"
+            placeholder="Логин"
+            onChange={handleLoginChange}
+            value={login}
+            required
+          />
+        </div>
+        <div>
+          <input
+            className="loginFormInput"
+            type="password"
+            placeholder="Пароль"
+            onChange={handlePasswordChange}
+            value={password}
+            required
+          />
+        </div>
+        <div>
+          <button className="blackBtn" onClick={handleLogIn}>
+            Войти
+          </button>
+        </div>
+      </form>
+    </h1>
   );
 };

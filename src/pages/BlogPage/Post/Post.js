@@ -8,7 +8,6 @@ import { ReactComponent as HeartIcon } from '../../../assets/images/heart.svg';
 
 
 export const Post = ({
-  id,
   title,
   description,
   liked = false,
@@ -30,20 +29,20 @@ export const Post = ({
         description
       )}
       &nbsp;
-      
+
     </p>
   );
 
   return (
     <div className='post'>
       <h2>{title}</h2>
-      {finalDescription}  
-        <button onClick={likePost} className='likeBtn'>
-          <HeartIcon fill={customFilling} />
-        </button>
+      {finalDescription}
+      <button onClick={likePost} className='likeBtn'>
+        <HeartIcon fill={customFilling} />
+      </button>
 
-        {isAdmin && (
-          <div className="actions">
+      {isAdmin && (
+        <div className="actions">
           <button onClick={deletePost} className='deleteBtn'>
             <DeleteForeverIcon />
           </button>
@@ -51,7 +50,7 @@ export const Post = ({
             <EditIcon />
           </button>
         </div>
-        )}
+      )}
     </div>
   );
 };

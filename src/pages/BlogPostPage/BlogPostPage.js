@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { POSTS_URL } from '../../utils/constants';
 import { useGetSinglePost } from '../../utils/hooks';
+import './../BlogPage/Post/Post.css';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { ReactComponent as HeartIcon } from '../../assets/images/heart.svg';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
@@ -18,9 +20,9 @@ export const BlogPostPage = ({ isAdmin }) => {
 
   const dispatch = useDispatch();
 
-  const { blogPost, setBlogPost, isLoading, error } = useGetSinglePost(
+  const { blogPost, setBlogPost, isLoading, error, isFetching } = useGetSinglePost(
     POSTS_URL,
-    postId
+    postId,
   );
 
   const [showEditForm, setShowEditForm] = useState(false);
@@ -49,29 +51,42 @@ export const BlogPostPage = ({ isAdmin }) => {
 
   const handleEditFormShow = () => setShowEditForm(true);
 
+  const postOpactiy = isFetching ? 0.5 : 1;
   const customFilling = liked ? 'crimson' : 'black';
 
   return (
-    <div className='post'>
-      <h2>{title}</h2>
-      {description}
-        <button onClick={handleLikePost} className='likeBtn'>
-          <HeartIcon fill={customFilling} />
-        </button>
-     {/* {isAdmin && (
-      <div className='actions'>
-        <button onClick={handleDeletePost} className='deleteBtn'>
-          <DeleteForeverIcon />
-        </button>
-        <button onClick={handleEditFormShow} className='selectBtn'>
-          <EditIcon />
-        </button>
+    <>
+      <div className='post' style={{ opacity: postOpactiy }}>
+        {showEditForm && (
+          <EditForm
+            setShowEditForm={setShowEditForm}
+            selectedPost={blogPost}
+          />
+        )}
+
+        <div className='post'>
+          <div>
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <div>
+              <button onClick={handleLikePost} className='likeBtn'>
+                <HeartIcon fill={customFilling} />
+              </button>
+            </div>
+          </div>
+          {isAdmin && (
+            <div className='actions'>
+              <button onClick={handleDeletePost} className='deleteBtn'>
+                <DeleteForeverIcon />
+              </button>
+              <button onClick={handleEditFormShow} className='selectBtn'>
+                <EditIcon />
+              </button>
+            </div>
+          )}
+        </div>
       </div>
-        )} */}
-      {showEditForm && (
-        <EditForm setShowEditForm={setShowEditForm} selectedPost={blogPost} />
-      )}
-    </div>
-  
+      {isFetching && <CircularProgress className='preloader' />}
+    </>
   );
 };

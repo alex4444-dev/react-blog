@@ -21,7 +21,7 @@ h2 {
   width: 100%;
   margin-top: 50px;
   text-align: left;
-  margin: 30px;
+  margin: 10px;
 }
 
 .posts {
@@ -48,6 +48,6 @@ h2 {
   position: relative;
   font-size: 20px;
   margin: auto;
-  bottom: 45px;
-  margin-left: 55px;
+  bottom: 40px;
+  margin-left: 40px;
 }
