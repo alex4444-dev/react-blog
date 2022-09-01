@@ -27,9 +27,9 @@ h2 {
 .posts {
   display: block;
   margin-left: 5px;
-  margin-right: 5px; 
+  margin-right: 5px;
   top: 50px;
-  font-size: 15px;   
+  font-size: 15px;
 }
 
 .postsControl {
@@ -48,6 +48,5 @@ h2 {
   position: relative;
   font-size: 20px;
   margin: auto;
-  bottom: 40px;
-  margin-left: 40px;
+  margin-left: 5px;
 }

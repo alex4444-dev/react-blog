@@ -1,20 +1,21 @@
 .pageWrapper {
     display: block;
-    width: 100%;
+    width: 115%;
     margin: auto;
 }
 
 .banner {
+    width: 100%;
     float: left;
     display: block;
     padding-right: 5px;
-    margin-bottom: 15px;
-    width: 100%;
+    margin-bottom: 15px;   
     height: 300px; 
 }
 
 
 .about {
+    width: 100%;
     display: block;
     float: right;  
 }

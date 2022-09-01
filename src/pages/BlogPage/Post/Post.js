@@ -1,23 +1,22 @@
-import React from 'react';
-import './Post.css'
+import React from "react";
+import "./Post.css";
+//import { Link } from 'react-router-dom';
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import EditIcon from "@material-ui/icons/Edit";
 
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import EditIcon from '@material-ui/icons/Edit';
-
-import { ReactComponent as HeartIcon } from '../../../assets/images/heart.svg';
-
+import { ReactComponent as HeartIcon } from "../../../assets/images/heart.svg";
 
 export const Post = ({
+  id,
   title,
   description,
   liked = false,
   likePost,
   deletePost,
   selectPost,
-  isAdmin
+  isAdmin,
 }) => {
-
-  const customFilling = liked ? 'crimson' : 'black';
+  const customFilling = liked ? "crimson" : "black";
 
   const finalDescription = (
     <p>
@@ -29,24 +28,25 @@ export const Post = ({
         description
       )}
       &nbsp;
-
+      {/* <div><Link to={`/blog/${id}`}>Подробнее</Link></div> */}
     </p>
   );
 
+
   return (
-    <div className='post'>
+    <div className="post">
       <h2>{title}</h2>
       {finalDescription}
-      <button onClick={likePost} className='likeBtn'>
+      <button onClick={likePost} className="likeBtn">
         <HeartIcon fill={customFilling} />
       </button>
 
       {isAdmin && (
         <div className="actions">
-          <button onClick={deletePost} className='deleteBtn'>
+          <button onClick={deletePost} className="deleteBtn">
             <DeleteForeverIcon />
           </button>
-          <button onClick={selectPost} className='selectBtn'>
+          <button onClick={selectPost} className="selectBtn">
             <EditIcon />
           </button>
         </div>

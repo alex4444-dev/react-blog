@@ -6,10 +6,9 @@
   align-content: center;
   justify-content: space-between;
   font-size: calc(15px + (30 - 15) * ((100vw - 500px) / (1920 - 500)));
-  margin: calc(5px + (30 - 5) * ((100vw - 500px) / (1920 - 500))) auto;
-  width: calc(200px + (500 - 250) * ((400vw - 750px) / (1920 - 500)));
+  margin: calc(5px + (30 - 5) * ((100vw - 900px) / (1920 - 500))) auto;
+  width: calc(200px + (500 - 250) * ((400vw - 1000px) / (1920 - 850)));
 }
-
 
 .actions {
   display: flex;
@@ -19,7 +18,6 @@
   top: 100%;
   bottom: 30px;
 }
-
 
 .likeBtn {
   display: flex;
