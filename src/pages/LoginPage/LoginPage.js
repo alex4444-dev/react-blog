@@ -23,7 +23,6 @@ export const LoginPage = ({ setIsLoggedIn, setUserName, setIsAdmin }) => {
     if (login === 'admin') {
       if (password === '4444') setIsAdmin(true);
       else {
-        //(setIsLoggedIn(false)); setIsAdmin(false);
         return false
       }
     }

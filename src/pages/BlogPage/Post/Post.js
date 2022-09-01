@@ -1,13 +1,11 @@
 import React from "react";
 import "./Post.css";
-//import { Link } from 'react-router-dom';
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import EditIcon from "@material-ui/icons/Edit";
 
 import { ReactComponent as HeartIcon } from "../../../assets/images/heart.svg";
 
 export const Post = ({
-  id,
   title,
   description,
   liked = false,
@@ -28,7 +26,7 @@ export const Post = ({
         description
       )}
       &nbsp;
-      {/* <div><Link to={`/blog/${id}`}>Подробнее</Link></div> */}
+
     </p>
   );
 
