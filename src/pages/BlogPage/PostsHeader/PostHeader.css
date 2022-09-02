@@ -3,22 +3,24 @@
   justify-content: center;
   position: relative;
   text-align: center;
+  font-size: calc(15px + (30 - 15) * ((100vw - 500px) / (1920 - 500)));
+  margin: calc(10px + (30 - 5) * ((100vw - 500px) / (1920 - 500))) auto;
+  width: calc(200px + (500 - 250) * ((400vw - 1000px) / (1920 - 850)));
 }
 
 .showAddFormBtn {
-  width: 150px;
-  height: 40px;
+  width: 120px;
+  height: 25px;
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 80px;
+  margin-bottom: 65px;
+  margin-top: 45px;
   position: absolute;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: 15px;
   background-color: #333;
   color: white;
 }
 
 h1{
-  font-size: 35px;
-  
+  font-size: 20px;
 }

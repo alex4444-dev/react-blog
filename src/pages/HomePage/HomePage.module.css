@@ -19,7 +19,18 @@
 .about {
     width: 100%;
     display: block;
-    float: right;  
+    float: left;  
+}
+
+.shortDescription {
+    display: block;
+    float: left;
+    font-size: 14pt;
+}
+.description {
+    display: block;
+    float: left;
+    font-size: 14pt;
 }
 
 .entryTitle {
@@ -47,7 +58,7 @@
 
 .ava {
     float: right;
-    width: 224px;
+    width: 230px;
     height: 260px;
     border: 1px solid hsla(21, 37%, 15%, 0.5);
 }
