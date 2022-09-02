@@ -2,6 +2,9 @@
     display: block;
     width: 115%;
     margin: auto;
+    font-size: calc(15px + (30 - 15) * ((100vw - 500px) / (1920 - 500)));
+    margin: calc(5px + (30 - 5) * ((100vw - 900px) / (1920 - 500))) auto;
+    width: calc(200px + (500 - 250) * ((400vw - 1000px) / (1920 - 850)));
 }
 
 .banner {
@@ -10,7 +13,6 @@
     display: block;
     padding-right: 5px;
     margin-bottom: 15px;   
-    height: 300px; 
 }
 
 
