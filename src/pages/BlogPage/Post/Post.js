@@ -3,7 +3,7 @@ import "./Post.css";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import EditIcon from "@material-ui/icons/Edit";
 
-import { ReactComponent as HeartIcon } from "../../../assets/images/heart.svg";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 export const Post = ({
   title,
@@ -14,7 +14,7 @@ export const Post = ({
   selectPost,
   isAdmin,
 }) => {
-  const customFilling = liked ? "crimson" : "black";
+  const heartFill = liked ? "crimson" : "black";
 
   const finalDescription = (
     <p>
@@ -33,10 +33,10 @@ export const Post = ({
 
   return (
     <div className="post">
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       {finalDescription}
       <button onClick={likePost} className="likeBtn">
-        <HeartIcon fill={customFilling} />
+        <FavoriteIcon style={{ fill: heartFill }} />
       </button>
 
       {isAdmin && (

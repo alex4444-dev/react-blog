@@ -1,3 +1,4 @@
+import { Redirect } from "react-router";
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './LoginPage.css';
@@ -21,11 +22,18 @@ export const LoginPage = ({ setIsLoggedIn, setUserName, setIsAdmin }) => {
     e.preventDefault();
 
     if (login === 'admin') {
-      if (password === '4444') setIsAdmin(true);
+      if (password === 'admin-aleksey-0406') setIsAdmin(true);
       else {
         return false
       }
-    }
+    }else if (login === ''){
+      if (password === '') {
+      alert("Заполните все поля!"); 
+      return <Redirect to="/login"/>;
+       } else {
+          return false
+        }
+      }
 
     setUserName(login);
     setIsLoggedIn(true);

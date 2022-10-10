@@ -14,10 +14,15 @@
   display: flex;
   justify-content: flex-end;
   position: relative;
-  height: 100%;
   top: 100%;
-  bottom: 30px;
+  left: 30px;
+  bottom: 20px;
 }
+
+.actions button {
+  padding: 3px;
+}
+
 
 .likeBtn {
   display: flex;
