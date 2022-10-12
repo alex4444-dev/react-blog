@@ -9,28 +9,22 @@ import {
   fetchPosts,
   selectPostsData,
 } from "../../store/slices/posts";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { EditForm } from "../../components/EditForm/EditForm";
 
 export const BlogPage = ({
   title,
   blogPosts,
-  setBlogPosts, 
-  isLikedPosts = false, 
-  isAdmin 
+  setBlogPosts,
+  isLikedPosts = false,
+  isAdmin,
 }) => {
-  
-  
-  const {list: posts, isLoading, error} = useSelector(selectPostsData);
+  const { list: posts, isLoading, error } = useSelector(selectPostsData);
   const dispatch = useDispatch();
-
 
   useEffect(() => {
     dispatch(fetchPosts());
   }, [dispatch]);
-
-  
 
   const likedPosts = posts.filter((post) => post.liked);
 
@@ -38,27 +32,26 @@ export const BlogPage = ({
     const updatedPosts = [...posts];
     updatedPosts[index] = {
       ...updatedPosts[index],
-      liked: !updatedPosts[index].liked
+      liked: !updatedPosts[index].liked,
     };
-    dispatch(editPost(updatedPosts[index]))
+    dispatch(editPost(updatedPosts[index]));
   };
 
   const handleDeletePost = (postId) => {
     const isDelete = window.confirm("Удалить пост?");
 
     if (isDelete) {
-      dispatch(deletePost(postId)); 
+      dispatch(deletePost(postId));
     }
-    
   };
 
   const [selectedPost, setSelectedPost] = useState({});
   const [showEditForm, setShowEditForm] = useState(false);
 
-    const selectPost = (post) => {
-      setSelectedPost(post);
-      setShowEditForm(true);
-    };
+  const selectPost = (post) => {
+    setSelectedPost(post);
+    setShowEditForm(true);
+  };
 
   if (isLoading) return <h1>Получаем данные...</h1>;
 
@@ -85,9 +78,6 @@ export const BlogPage = ({
                 selectPost={() => selectPost(post)}
                 isAdmin={isAdmin}
               />
-              <div className={s.readMoreLink}>
-                <Link to={`/blog/${post.id}`}>Подробнее</Link>
-              </div>
             </React.Fragment>
           );
         })}

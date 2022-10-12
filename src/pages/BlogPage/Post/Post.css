@@ -14,9 +14,9 @@
   display: flex;
   justify-content: flex-end;
   position: relative;
+  right: 20px;
   top: 100%;
-  left: 30px;
-  bottom: 20px;
+  bottom: 30px;
 }
 
 .actions button {
