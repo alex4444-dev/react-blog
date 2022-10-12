@@ -29,7 +29,8 @@
   justify-content: flex-start;
   position: relative;
   padding-top: 5px;
-  width: 40px;
+  right: 5px;
+  width: 25px;
 }
 
 .deleteBtn svg {

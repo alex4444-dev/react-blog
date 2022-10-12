@@ -25,7 +25,7 @@ export const Post = ({
         description
       )}
       &nbsp;
-      <Link to={`/blog/${id}`}>Подробнее</Link>
+      <Link to={`/blog/${id}`}>Читать далее</Link>
     </p>
     
   );
@@ -37,9 +37,7 @@ export const Post = ({
       <button onClick={likePost} className="likeBtn">
        <FavoriteIcon style={{ fill: heartFill }}  />
       </button>
-      
-      
-
+        
       {isAdmin && (
         <div className="actions">
           <button onClick={deletePost} className="deleteBtn">
