@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { deletePost, editPost } from '../../store/slices/posts';
 import { EditForm } from '../../components/EditForm/EditForm';
 
+
 export const BlogPostPage = ({ isAdmin }) => {
   const { postId } = useParams();
 
@@ -34,10 +35,10 @@ export const BlogPostPage = ({ isAdmin }) => {
   const handleLikePost = () => {
     const updatedPost = { ...blogPost, liked: !blogPost.liked };
 
-    dispatch(editPost(updatedPost)).then(() => {
-      setBlogPost(updatedPost);
-    });
+    dispatch(editPost(updatedPost))
+    setBlogPost(updatedPost);
   };
+
 
 
   const handleDeletePost = () => {
@@ -50,35 +51,36 @@ export const BlogPostPage = ({ isAdmin }) => {
 
   const handleEditFormShow = () => setShowEditForm(true);
 
+
   const postOpactiy = isFetching ? 0.5 : 1;
   const heartFill = liked ? 'crimson' : 'black';
 
   return (
     <>
       <div className='post' style={{ opacity: postOpactiy }}>
+        <div>
+          <h2>{title}</h2>
+          <p>{description}</p>
           <div>
-            <h2>{title}</h2>
-            <p>{description}</p>
-            <div>
-              <button onClick={handleLikePost} className='likeBtn'>
-                <FavoriteIcon style={{ fill: heartFill }} />
-              </button>
+            <button onClick={handleLikePost} className='likeBtn'>
+              <FavoriteIcon style={{ fill: heartFill }} />
+            </button>
 
-              {isAdmin && (
-                <div className="actions">
-                    <button onClick={handleDeletePost} className="deleteBtn">
-                        <DeleteForeverIcon />
-                    </button>
-                  <button onClick={handleEditFormShow} className="selectBtn">
-                    <EditIcon />
-                  </button>
-                </div>
-                )}
-            </div>
+            {isAdmin && (
+              <div className="actions">
+                <button onClick={handleDeletePost} className="deleteBtn">
+                  <DeleteForeverIcon />
+                </button>
+                <button onClick={handleEditFormShow} className="selectBtn">
+                  <EditIcon />
+                </button>
+              </div>
+            )}
           </div>
-          {showEditForm && (
-        <EditForm setShowEditForm={setShowEditForm} selectedPost={blogPost} />
-      )}
+        </div>
+        {showEditForm && (
+          <EditForm setShowEditForm={setShowEditForm} selectedPost={blogPost} />
+        )}
       </div>
       {isFetching && <CircularProgress className='preloader' />}
     </>

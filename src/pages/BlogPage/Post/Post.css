@@ -14,19 +14,19 @@
   display: flex;
   justify-content: flex-end;
   position: relative;
-  right: 20px;
+  right: 15px;
   top: 100%;
   bottom: 30px;
 }
 
 .actions button {
-  padding: 3px;
+  padding: 0px;
 }
 
 
 .likeBtn {
-  display: flex;
-  justify-content: flex-start;
+  display: block;
+  justify-content: space-between;
   position: relative;
   padding-top: 5px;
   right: 5px;
