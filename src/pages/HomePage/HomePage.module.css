@@ -1,9 +1,9 @@
 .pageWrapper {
     display: block;
-    width: 115%;
+    width: 100%;
     margin: auto;
     font-size: calc(15px + (30 - 15) * ((100vw - 500px) / (1920 - 500)));
-    margin: calc(5px + (30 - 5) * ((100vw - 900px) / (1920 - 500))) auto;
+    margin: calc(5px + (5 - 5) * ((100vw - 900px) / (1920 - 500))) auto;
     width: calc(200px + (500 - 250) * ((400vw - 1000px) / (1920 - 850)));
 }
 
@@ -58,7 +58,10 @@
 
 .ava {
     float: right;
-    width: 140px;
+    display: block;
+    width: 135px;
     height: 160px;
     border: 1px solid hsla(21, 37%, 15%, 0.5);
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
