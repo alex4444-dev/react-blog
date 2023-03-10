@@ -11,6 +11,7 @@ import {
 } from "../../store/slices/posts";
 import { useDispatch, useSelector } from "react-redux";
 import { EditForm } from "../../components/EditForm/EditForm";
+import arrowUp from "../../assets/images/up-arrow.svg";
 
 export const BlogPage = ({
   title,
@@ -47,10 +48,26 @@ export const BlogPage = ({
 
   const [selectedPost, setSelectedPost] = useState({});
   const [showEditForm, setShowEditForm] = useState(false);
+  const [showButton, setShowButton] = useState("");
 
   const selectPost = (post) => {
     setSelectedPost(post);
     setShowEditForm(true);
+  };
+
+  useEffect(() => {
+    const handleScrollButtonVisiblity = () => {
+      window.pageYoffset > 600 ? setShowButton(true) : setShowButton(true);
+    };
+    window.addEventListener("scroll", handleScrollButtonVisiblity);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollButtonVisiblity);
+    };
+  }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   if (isLoading) return <h1>Получаем данные...</h1>;
@@ -90,6 +107,14 @@ export const BlogPage = ({
           setBlogPosts={setBlogPosts}
           blogPosts={blogPosts}
         />
+      )}
+
+      {showButton && (
+        <div>
+          <button className={s.upToTopButton} onClick={handleScrollToTop}>
+            <img src={arrowUp} alt="scrollToTop" />
+          </button>
+        </div>
       )}
     </div>
   );

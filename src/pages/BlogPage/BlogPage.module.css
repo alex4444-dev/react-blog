@@ -34,4 +34,15 @@ h3 {
   font-size: 10px;
 }
 
-
+.upToTopButton {
+  position: fixed;
+  background-color: #ccc;
+  left: 20px;
+  bottom: 0;
+  border-top-left-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+}
