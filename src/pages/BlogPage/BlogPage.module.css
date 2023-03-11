@@ -36,7 +36,7 @@ h3 {
 
 .upToTopButton {
   position: fixed;
-  background-color: #ccc;
+  background-color: transparent;
   left: 20px;
   bottom: 0;
   border-top-left-radius: 8px;
